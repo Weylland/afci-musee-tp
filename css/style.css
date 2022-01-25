@@ -2,6 +2,7 @@
   --color1: #049cd8;
   --color2: #e52521;
   --color3: #fff;
+  --color5: #232323;
 }
 * {
   margin: 0;
@@ -92,6 +93,17 @@ nav:hover span {
   opacity: 1;
   transform: translateX(0);
 }
+nav input:hover ~ div {
+  width: 300px;
+  cursor: pointer;
+}
+nav input:hover {
+  cursor: pointer;
+}
+nav span:hover,
+nav i:hover {
+  transform: scale(0.9);
+}
 nav input:checked ~ div {
   width: 300px;
 }
@@ -108,19 +120,8 @@ nav input:checked ~ .burgerImg {
 nav input:checked ~ .crossImg {
   opacity: 1;
 }
-nav input:hover ~ div {
-  width: 300px;
-  cursor: pointer;
-}
-nav input:hover {
-  cursor: pointer;
-}
 nav input:hover ~ .burgerImg,
 nav input:hover ~ .crossImg {
-  transform: scale(0.9);
-}
-nav span:hover,
-nav i:hover {
   transform: scale(0.9);
 }
 /********************************************** header */
@@ -149,7 +150,7 @@ header h1 {
 header h2 {
   font-size: 2.5rem;
 }
-#headerBtn {
+.nintendoBtn {
   font-family: "roboto-bold";
   display: block;
   width: 440px;
@@ -164,7 +165,7 @@ header h2 {
   align-items: center;
   text-decoration: none;
 }
-#headerBtn:hover {
+.nintendoBtn:hover {
   transform: scale(0.95);
 }
 #nintendoLogo {
@@ -196,14 +197,65 @@ header h2 {
 #cloudImg img {
   width: 100%;
 }
-#groundImg {
+.groundImg {
   width: 100%;
   position: absolute;
   bottom: 0;
   left: 0;
   overflow: hidden;
 }
-#groundImg img {
+.groundImg img {
+  width: 100%;
+  transform: translateY(50%);
+}
+/***************************************************** home history */
+#history {
+  height: 100vh;
+  width: 100vw;
+  background-color: var(--color5);
+  position: relative;
+  color: var(--color3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#historyContent {
+  width: 80%;
+  height: 50%;
+  display: flex;
+  justify-content: space-around;
+}
+#historyImg {
+  background-color: wheat;
+  margin: auto;
+}
+#historyText {
+  font-size: 1.5rem;
+  line-height: 3rem;
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.undergroundCeilingImg {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+}
+.undergroundCeilingImg img {
+  width: 100%;
+  transform: translateY(-50%);
+}
+.undergroundGroundImg {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  overflow: hidden;
+}
+.undergroundGroundImg img {
   width: 100%;
   transform: translateY(50%);
 }
@@ -221,7 +273,7 @@ header h2 {
   header h2 {
     font-size: 1.5rem;
   }
-  #headerBtn {
+  .nintendoBtn {
     font-size: 1.5rem;
     width: 340px;
     height: 75px;
@@ -250,13 +302,14 @@ header h2 {
     top: 5%;
     left: 3%;
   }
-  /* header */
   #headerContent {
     transform: translate(0, 0);
   }
 }
 @media screen and (max-width: 680px) {
+  /* header */
   #headerContent {
+    height: 300px;
     align-items: center;
   }
   header h1 {
@@ -265,7 +318,7 @@ header h2 {
   header h2 {
     font-size: 1rem;
   }
-  #headerBtn {
+  .nintendoBtn {
     font-size: 1.1rem;
     width: 300px;
     height: 60px;
