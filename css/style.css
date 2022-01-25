@@ -230,10 +230,10 @@ header h2 {
 @media screen and (max-width: 1024px) {
   /* nav */
   nav div {
-    display: none;
+    transform: translateX(-100%);
   }
   nav input:checked ~ div {
-    display: block;
+    transform: translateX(0);
     width: 300px;
   }
   /* header  */
