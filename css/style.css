@@ -1,54 +1,261 @@
+:root {
+  --color1: #049cd8;
+  --color2: #e52521;
+  --color3: #fff;
+}
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: "roboto", "sans-serif";
 }
-
-header {
-  height: 100vh;
-  width: 100vw;
-  background-color: #049cd8;
+/* font */
+@font-face {
+  font-family: "roboto";
+  src: url("../assets/font/roboto/Roboto-Regular.ttf");
+}
+@font-face {
+  font-family: "roboto-bold";
+  src: url("../assets/font/roboto/Roboto-Bold.ttf");
 }
 /* Navbar */
 nav div {
   width: 88px;
   height: 100vh;
-  background-color: #e52521;
+  background-color: var(--color2);
   position: fixed;
   top: 0;
   left: 0;
   z-index: 999;
   box-shadow: rgba(0, 0, 0, 0.342) 5px 5px 30px;
+  transition: 0.5s ease-in;
+}
+.burgerImg,
+.crossImg {
+  color: var(--color3);
+  font-size: 3em;
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  z-index: 1000;
+}
+.crossImg {
+  opacity: 0;
+}
+nav input {
+  position: fixed;
+  top: 14px;
+  left: 10px;
+  width: 60px;
+  height: 60px;
+  z-index: 1001;
+  opacity: 0;
 }
 nav ul {
+  margin-top: 100px;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   height: 60vh;
+  min-height: 400px;
   list-style: none;
 }
+nav span {
+  opacity: 0;
+  height: fit-content;
+  margin-left: 20px;
+  font-size: 2em;
+  transition: 0.5s ease-in;
+  transform: translateX(-200%);
+}
+nav a {
+  width: 100%;
+  color: var(--color3);
+  text-decoration: none;
+  display: flex;
+}
+.navIcon {
+  margin-left: 20px;
+  text-align: center;
+  font-size: 3em;
+  color: var(--color3);
+}
+.navActive {
+  color: #fbd000;
+}
+/* Nav animation */
 nav div:hover {
   width: 300px;
   cursor: pointer;
 }
-nav span {
-  display: none;
-  height: fit-content;
-  font-size: 2em;
-}
 nav:hover span {
-  display: block;
+  opacity: 1;
+  transform: translateX(0);
 }
-nav a {
-  width: 100%;
-  color: #fff;
-  text-decoration: none;
+nav input:checked ~ div {
+  width: 300px;
+}
+nav input:checked ~ div span {
+  opacity: 1;
+  transform: translateX(0);
+}
+nav input:checked ~ div span:hover {
+  transform: scale(0.9);
+}
+nav input:checked ~ .burgerImg {
+  opacity: 0;
+}
+nav input:checked ~ .crossImg {
+  opacity: 1;
+}
+nav input:hover ~ div {
+  width: 300px;
+  cursor: pointer;
+}
+nav input:hover {
+  cursor: pointer;
+}
+nav input:hover ~ .burgerImg,
+nav input:hover ~ .crossImg {
+  transform: scale(0.9);
+}
+nav span:hover,
+nav i:hover {
+  transform: scale(0.9);
+}
+/********************************************** header */
+header {
+  height: 100vh;
+  width: 100vw;
+  background-color: var(--color1);
+  position: relative;
   display: flex;
+  justify-content: center;
   align-items: center;
 }
-.navIcon {
-  width: 88px;
-  text-align: center;
-  font-size: 3em;
-  color: #fff;
+#headerContent {
+  color: var(--color3);
+  width: fit-content;
+  z-index: 5;
+  transform: translate(25%, -10%);
+}
+h1 {
+  font-size: 4rem;
+  margin-bottom: 30px;
+}
+header h2 {
+  font-size: 2.5rem;
+  margin: 80px 0;
+}
+#headerBtn {
+  font-family: "roboto-bold";
+  display: block;
+  width: 440px;
+  height: 100px;
+  font-size: 2rem;
+  color: var(--color2);
+  background-color: var(--color3);
+  border-radius: 50px;
+  border: 13px solid var(--color2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+}
+#headerBtn:hover {
+  transform: scale(0.95);
+}
+#nintendoLogo {
+  position: absolute;
+  top: 0;
+  right: 0;
+  text-align: right;
+}
+#nintendoLogo img {
+  width: 20%;
+  margin-right: 8%;
+  margin-top: 1%;
+}
+#marioImg {
+  width: 30%;
+  position: absolute;
+  bottom: 15%;
+  left: 8%;
+}
+#marioImg img {
+  width: 100%;
+}
+#cloudImg {
+  width: 50%;
+  position: absolute;
+  top: 1%;
+  left: 3%;
+}
+#cloudImg img {
+  width: 100%;
+}
+#groundImg {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  overflow: hidden;
+}
+#groundImg img {
+  width: 100%;
+  transform: translateY(50%);
+}
+/***************************************************** media */
+@media screen and (max-width: 1360px) {
+  /* header */
+  #headerContent {
+    transform: translate(0, -40%);
+  }
+  #marioImg {
+    width: 30%;
+    bottom: 5%;
+    left: 10%;
+  }
+  h1 {
+    font-size: 3rem;
+  }
+  header h2 {
+    font-size: 1.5rem;
+  }
+}
+@media screen and (max-width: 1024px) {
+  /* nav */
+  nav div {
+    display: none;
+  }
+  nav input:checked ~ div {
+    display: block;
+    width: 300px;
+  }
+  /* header  */
+  #nintendoLogo img {
+    width: 30%;
+  }
+  #marioImg {
+    width: 40%;
+    bottom: 5%;
+    left: 5%;
+  }
+  #cloudImg {
+    width: 60%;
+    top: 5%;
+    left: 3%;
+  }
+  #headerContent {
+    transform: translate(0, -150%);
+    width: 100%;
+    text-align: center;
+  }
+  h1 {
+    font-size: 1.5rem;
+  }
+  header h2 {
+    font-size: 1rem;
+    margin: 0;
+  }
 }

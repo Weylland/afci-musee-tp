@@ -11,14 +11,15 @@
 
 <body>
     <nav>
+        <input type="checkbox">
+        <i class="fas fa-bars burgerImg"></i>
+        <i class="fas fa-times crossImg"></i>
         <div>
-            <input type="checkbox">
-            <i class="fas fa-bars burgerImg"></i>
             <ul>
                 <li>
                     <a href="./index.html">
-                        <i class="fas fa-home navIcon"></i>
-                        <span>Accueil</span>
+                        <i class="fas fa-home navIcon navActive"></i>
+                        <span class="navActive">Accueil</span>
                     </a>
                 </li>
                 <li>
@@ -55,6 +56,25 @@
         </div>
     </nav>
     <header>
+        <!-- Background  -->
+        <div id="nintendoLogo">
+            <img src="./assets/img/logo-nintendo.png" alt="Logo Nintendo">
+        </div>
+        <div id="cloudImg">
+            <img src="./assets/img/nuage.png" alt="Nuages">
+        </div>
+        <div id="marioImg">
+            <img src="./assets/img/mario.png" alt="Image de mario">
+        </div>
+        <div id="groundImg">
+            <img src="./assets/img/ground.png" alt="Sol de brique">
+        </div>
+        <!-- Content  -->
+        <div id="headerContent">
+            <h1>Bienvenue au musée Nintendo</h1>
+            <h2>Venez découvrir l’histoire de la marque </h2>
+            <a href="" id="headerBtn">Commencer la visite</a>
+        </div>
 
     </header>
     <!-- JS  -->
