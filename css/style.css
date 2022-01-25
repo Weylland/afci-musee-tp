@@ -134,18 +134,20 @@ header {
   align-items: center;
 }
 #headerContent {
+  height: 400px;
   color: var(--color3);
-  width: fit-content;
   z-index: 5;
   transform: translate(25%, -10%);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-around;
 }
-h1 {
+header h1 {
   font-size: 4rem;
-  margin-bottom: 30px;
 }
 header h2 {
   font-size: 2.5rem;
-  margin: 80px 0;
 }
 #headerBtn {
   font-family: "roboto-bold";
@@ -208,19 +210,21 @@ header h2 {
 /***************************************************** media */
 @media screen and (max-width: 1360px) {
   /* header */
-  #headerContent {
-    transform: translate(0, -40%);
-  }
   #marioImg {
     width: 30%;
     bottom: 5%;
     left: 10%;
   }
-  h1 {
+  header h1 {
     font-size: 3rem;
   }
   header h2 {
     font-size: 1.5rem;
+  }
+  #headerBtn {
+    font-size: 1.5rem;
+    width: 340px;
+    height: 75px;
   }
 }
 @media screen and (max-width: 1024px) {
@@ -246,16 +250,25 @@ header h2 {
     top: 5%;
     left: 3%;
   }
+  /* header */
   #headerContent {
-    transform: translate(0, -150%);
-    width: 100%;
-    text-align: center;
+    transform: translate(0, 0);
   }
-  h1 {
+}
+@media screen and (max-width: 680px) {
+  #headerContent {
+    align-items: center;
+  }
+  header h1 {
     font-size: 1.5rem;
   }
   header h2 {
     font-size: 1rem;
-    margin: 0;
+  }
+  #headerBtn {
+    font-size: 1.1rem;
+    width: 300px;
+    height: 60px;
+    border: 9px solid var(--color2);
   }
 }
