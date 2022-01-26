@@ -292,9 +292,13 @@ section {
 #homeHistory {
   background-color: var(--color5);
 }
+/***************************************************** home history */
+#museum {
+  background-color: var(--color6);
+}
 /***************************************************** home collection */
 #homeCollection {
-  background-color: var(--color6);
+  background-color: var(--color1);
 }
 #homeCollectionImg {
   max-width: 400px;
