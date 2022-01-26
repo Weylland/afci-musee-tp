@@ -292,9 +292,15 @@ section {
 #homeHistory {
   background-color: var(--color5);
 }
-/***************************************************** home history */
+/***************************************************** home museum */
 #museum {
   background-color: var(--color6);
+}
+#museumImg {
+  margin-top: 0;
+}
+#museumImg img {
+  max-width: 400px;
 }
 /***************************************************** home collection */
 #homeCollection {
@@ -303,6 +309,19 @@ section {
 #homeCollectionImg {
   max-width: 400px;
 }
+/***************************************************** hours and price */
+.hoursContent {
+  height: 50vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.hoursBlock {
+  width: 70%;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
 /*******************************************************/
 /******************** MEDIA ****************************/
 /*******************************************************/
@@ -333,10 +352,6 @@ section {
   /* history */
   .sectionImg img {
     margin-top: 0;
-  }
-  /* collection */
-  #homeCollectionImg {
-    display: none;
   }
 }
 
