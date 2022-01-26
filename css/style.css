@@ -10,6 +10,9 @@
   box-sizing: border-box;
   font-family: "roboto", "sans-serif";
 }
+body {
+  overflow-x: hidden;
+}
 /* font */
 @font-face {
   font-family: "roboto";
@@ -124,9 +127,14 @@ nav input:hover ~ .burgerImg,
 nav input:hover ~ .crossImg {
   transform: scale(0.9);
 }
+/*******************************************************/
+/******************** HOME PAGE ************************/
+/*******************************************************/
+
 /********************************************** header */
 header {
-  height: 100vh;
+  min-height: 100vh;
+  height: 100%;
   width: 100vw;
   background-color: var(--color1);
   position: relative;
@@ -210,32 +218,41 @@ header h2 {
 }
 /***************************************************** home history */
 #history {
-  height: 100vh;
+  min-height: 100vh;
+  height: 100%;
   width: 100vw;
   background-color: var(--color5);
   position: relative;
   color: var(--color3);
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 #historyContent {
   width: 80%;
-  height: 50%;
   display: flex;
   justify-content: space-around;
 }
-#historyImg {
-  background-color: wheat;
-  margin: auto;
+#historyImg img {
+  width: 100%;
+  margin-top: 100px;
 }
 #historyText {
-  font-size: 1.5rem;
   line-height: 3rem;
   width: 60%;
+  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+}
+#historyText h2 {
+  font-size: 3rem;
+  margin: 40px 0;
+}
+#historyText p {
+  font-size: 1.5rem;
+  margin: 40px 0;
 }
 .undergroundCeilingImg {
   width: 100%;
@@ -259,8 +276,23 @@ header h2 {
   width: 100%;
   transform: translateY(50%);
 }
-/***************************************************** media */
+.chevronDown {
+  color: var(--color3);
+  font-size: 4rem;
+}
+#historyChevron {
+  margin: 100px 0;
+}
+/*******************************************************/
+/******************** MEDIA ****************************/
+/*******************************************************/
+
+/* 1360px  */
+
 @media screen and (max-width: 1360px) {
+  /*******************************************************/
+  /******************** HOME PAGE ************************/
+  /*******************************************************/
   /* header */
   #marioImg {
     width: 30%;
@@ -278,8 +310,21 @@ header h2 {
     width: 340px;
     height: 75px;
   }
+  /* history */
+  #historyContent {
+    margin-top: 100px;
+  }
+  #historyImg img {
+    margin-top: 0;
+  }
 }
+
+/* 1024px */
+
 @media screen and (max-width: 1024px) {
+  /*******************************************************/
+  /******************** NAV ******************************/
+  /*******************************************************/
   /* nav */
   nav div {
     transform: translateX(-100%);
@@ -288,6 +333,9 @@ header h2 {
     transform: translateX(0);
     width: 300px;
   }
+  /*******************************************************/
+  /******************** HOME PAGE ************************/
+  /*******************************************************/
   /* header  */
   #nintendoLogo img {
     width: 30%;
@@ -305,7 +353,28 @@ header h2 {
   #headerContent {
     transform: translate(0, 0);
   }
+  /* history */
+  #historyContent {
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    margin-top: 0;
+  }
+  #historyImg {
+    margin: 100px 0 40px 0;
+  }
+  #historyText {
+    width: 80%;
+    text-align: center;
+  }
+  #historyText .nintendoBtn {
+    margin: auto;
+  }
 }
+
+/* 680px */
+
 @media screen and (max-width: 680px) {
   /* header */
   #headerContent {
