@@ -3,12 +3,15 @@
   --color2: #e52521;
   --color3: #fff;
   --color5: #232323;
+  --color6: #0058f8;
+  --color7: #fbd000;
 }
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: "roboto", "sans-serif";
+  scroll-behavior: smooth;
 }
 body {
   overflow-x: hidden;
@@ -40,7 +43,7 @@ nav div {
   font-size: 3em;
   position: fixed;
   top: 20px;
-  left: 20px;
+  left: 22px;
   z-index: 1000;
 }
 .crossImg {
@@ -74,9 +77,12 @@ nav span {
 }
 nav a {
   width: 100%;
+  height: 100px;
   color: var(--color3);
   text-decoration: none;
   display: flex;
+  align-items: center;
+  border-bottom: 1px solid var(--color3);
 }
 .navIcon {
   margin-left: 20px;
@@ -85,7 +91,7 @@ nav a {
   color: var(--color3);
 }
 .navActive {
-  color: #fbd000;
+  color: var(--color7);
 }
 /* Nav animation */
 nav div:hover {
@@ -103,9 +109,10 @@ nav input:hover ~ div {
 nav input:hover {
   cursor: pointer;
 }
-nav span:hover,
-nav i:hover {
-  transform: scale(0.9);
+nav a:hover,
+nav a:hover i {
+  transform: scale(0.98);
+  color: var(--color7);
 }
 nav input:checked ~ div {
   width: 300px;
@@ -205,19 +212,8 @@ header h2 {
 #cloudImg img {
   width: 100%;
 }
-.groundImg {
-  width: 100%;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  overflow: hidden;
-}
-.groundImg img {
-  width: 100%;
-  transform: translateY(50%);
-}
-/***************************************************** home history */
-#history {
+/***************************************************** home section */
+section {
   min-height: 100vh;
   height: 100%;
   width: 100vw;
@@ -229,16 +225,17 @@ header h2 {
   justify-content: center;
   align-items: center;
 }
-#historyContent {
+.sectionContent {
   width: 80%;
+  margin-top: 200px;
   display: flex;
   justify-content: space-around;
 }
-#historyImg img {
+.sectionImg img {
   width: 100%;
   margin-top: 100px;
 }
-#historyText {
+.sectionText {
   line-height: 3rem;
   width: 60%;
   height: 100%;
@@ -246,42 +243,61 @@ header h2 {
   flex-direction: column;
   justify-content: space-around;
 }
-#historyText h2 {
+.sectionText h2 {
   font-size: 3rem;
   margin: 40px 0;
 }
-#historyText p {
+.sectionText p {
   font-size: 1.5rem;
-  margin: 40px 0;
+  margin: 40px 0 100px;
 }
-.undergroundCeilingImg {
+.ceilingImg {
   width: 100%;
   position: absolute;
   top: 0;
   left: 0;
   overflow: hidden;
 }
-.undergroundCeilingImg img {
+.ceilingImg img {
   width: 100%;
   transform: translateY(-50%);
 }
-.undergroundGroundImg {
+.groundImg {
   width: 100%;
   position: absolute;
   bottom: 0;
   left: 0;
   overflow: hidden;
 }
-.undergroundGroundImg img {
+.groundImg img {
   width: 100%;
   transform: translateY(50%);
+}
+.chevronA {
+  display: block;
+  height: 100px;
+  width: 100px;
+  margin: 25px 0 100px 0;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
 }
 .chevronDown {
   color: var(--color3);
   font-size: 4rem;
 }
-#historyChevron {
-  margin: 100px 0;
+/***************************************************** home history */
+#homeHistory {
+  background-color: var(--color5);
+}
+/***************************************************** home collection */
+#homeCollection {
+  background-color: var(--color6);
+}
+#homeCollectionImg {
+  max-width: 400px;
 }
 /*******************************************************/
 /******************** MEDIA ****************************/
@@ -311,11 +327,12 @@ header h2 {
     height: 75px;
   }
   /* history */
-  #historyContent {
-    margin-top: 100px;
-  }
-  #historyImg img {
+  .sectionImg img {
     margin-top: 0;
+  }
+  /* collection */
+  #homeCollectionImg {
+    display: none;
   }
 }
 
@@ -354,21 +371,21 @@ header h2 {
     transform: translate(0, 0);
   }
   /* history */
-  #historyContent {
+  .sectionContent {
     width: 100%;
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
     margin-top: 0;
   }
-  #historyImg {
+  .sectionImg {
     margin: 100px 0 40px 0;
   }
-  #historyText {
+  .sectionText {
     width: 80%;
     text-align: center;
   }
-  #historyText .nintendoBtn {
+  .sectionText .nintendoBtn {
     margin: auto;
   }
 }
