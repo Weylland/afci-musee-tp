@@ -27,6 +27,7 @@ body {
 }
 /* Navbar */
 nav div {
+  padding-top: 150px;
   width: 88px;
   height: 100vh;
   background-color: var(--color2);
@@ -43,7 +44,7 @@ nav div {
   font-size: 3em;
   position: fixed;
   top: 20px;
-  left: 22px;
+  left: 24px;
   z-index: 1000;
 }
 .crossImg {
@@ -58,8 +59,10 @@ nav input {
   z-index: 1001;
   opacity: 0;
 }
+.navContent {
+  height: 100%;
+}
 nav ul {
-  margin-top: 100px;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -310,18 +313,77 @@ section {
   max-width: 400px;
 }
 /***************************************************** hours and price */
-.hoursContent {
-  height: 50vh;
+.informationsContent {
+  width: 80%;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto 2fr 2fr;
+  grid-template-areas: 
+    "informationsTitle"
+    "informationsHours"
+    "informationsPrices"
+  ;
+}
+.informationsTitle {
+  background: blueviolet;
+  grid-area: informationsTitle;
+}
+.informationsHours {
+  height: 200px;
+  background: #e52521;
+  grid-area: informationsHours;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto;
+  grid-template-areas: 
+  "leftH rightH"
+;
+}
+.informationsPrices {
+  background: #fbd000;
+  grid-area: informationsPrices;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto;
+  grid-template-areas: 
+  "leftP rightP"
+;
+}
+.informationsHoursLeft,
+.informationsHoursRight,
+.informationsPricesLeft,
+.informationsPricesRight {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-.hoursBlock {
-  width: 70%;
+  width: 90%;
   height: 100%;
-  display: flex;
-  justify-content: space-between;
+  margin: auto;
+}
+.informationsHoursLeft h3,
+.informationsHoursRight h3,
+.informationsPricesLeft h3 {
+  margin: 30px 0;
+}
+.informationsHoursRight h3 {
+  text-align: center;
+}
+.informationsHoursLeft {
+  grid-area: leftH;
+}
+.informationsHoursRight {
+  grid-area: rightH;
+  align-items: center;
+  justify-content: space-around;
+}
+.opening {
+  text-align: center;
+  margin: 20px 0;
+}
+.informationsPricesLeft {
+  grid-area: leftP;
+}
+.informationsPricesRight {
+  grid-area: rightP;
 }
 /*******************************************************/
 /******************** MEDIA ****************************/
@@ -335,7 +397,7 @@ section {
   /*******************************************************/
   /* header */
   #marioImg {
-    width: 30%;
+    width: 20%;
     bottom: 5%;
     left: 10%;
   }
@@ -376,11 +438,6 @@ section {
   /* header  */
   #nintendoLogo img {
     width: 30%;
-  }
-  #marioImg {
-    width: 40%;
-    bottom: 5%;
-    left: 5%;
   }
   #cloudImg {
     width: 60%;
