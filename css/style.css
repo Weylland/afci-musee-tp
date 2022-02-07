@@ -13,9 +13,6 @@
   font-family: "roboto", "sans-serif";
   scroll-behavior: smooth;
 }
-body {
-  overflow-x: hidden;
-}
 /* font */
 @font-face {
   font-family: "roboto";
@@ -145,7 +142,7 @@ nav input:hover ~ .crossImg {
 header {
   min-height: 100vh;
   height: 100%;
-  width: 100vw;
+  width: 100%;
   background-color: var(--color1);
   position: relative;
   display: flex;
@@ -171,7 +168,7 @@ header h2 {
 .nintendoBtn {
   font-family: "roboto-bold";
   display: block;
-  width: 440px;
+  width: 40%;
   height: 100px;
   font-size: 2rem;
   color: var(--color2);
@@ -219,7 +216,8 @@ header h2 {
 section {
   min-height: 100vh;
   height: 100%;
-  width: 100vw;
+  width: 100%;
+  margin: 0;
   background-color: var(--color5);
   position: relative;
   color: var(--color3);
@@ -234,8 +232,14 @@ section {
   display: flex;
   justify-content: space-around;
 }
+.sectionImg {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+}
 .sectionImg img {
-  width: 100%;
+  max-width: 100%;
   margin-top: 100px;
 }
 .sectionText {
@@ -325,12 +329,10 @@ section {
   ;
 }
 .informationsTitle {
-  background: blueviolet;
   grid-area: informationsTitle;
 }
 .informationsHours {
-  height: 200px;
-  background: #e52521;
+  padding: 10px;
   grid-area: informationsHours;
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -340,7 +342,7 @@ section {
 ;
 }
 .informationsPrices {
-  background: #fbd000;
+  padding: 10px;
   grid-area: informationsPrices;
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -348,6 +350,14 @@ section {
   grid-template-areas: 
   "leftP rightP"
 ;
+}
+.informationsPricesRight div {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 20px;
+}
+.informationsPricesRight span {
+  margin: auto 0;
 }
 .informationsHoursLeft,
 .informationsHoursRight,
@@ -360,7 +370,6 @@ section {
   margin: auto;
 }
 .informationsHoursLeft h3,
-.informationsHoursRight h3,
 .informationsPricesLeft h3 {
   margin: 30px 0;
 }
@@ -373,17 +382,40 @@ section {
 .informationsHoursRight {
   grid-area: rightH;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-evenly;
+  background: #3f3f3f;
+  padding: 10px;
+}
+.closed {
+  width: 100%;
+  text-align: center;
+}
+.closed span {
+  display: block;
+  margin: 20px 0;
+}
+.open {
+  border-bottom: 1px solid var(--color5);
+  padding: 10px;
 }
 .opening {
   text-align: center;
   margin: 20px 0;
 }
+.adult {
+  border-bottom: 1px solid var(--color5);
+  padding-bottom: 10px;
+}
 .informationsPricesLeft {
   grid-area: leftP;
+  height: fit-content;
 }
 .informationsPricesRight {
   grid-area: rightP;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  background: #3f3f3f;
 }
 /*******************************************************/
 /******************** MEDIA ****************************/
@@ -412,7 +444,7 @@ section {
     width: 340px;
     height: 75px;
   }
-  /* history */
+  /***************************************************** home history */
   .sectionImg img {
     margin-top: 0;
   }
@@ -447,7 +479,27 @@ section {
   #headerContent {
     transform: translate(0, 0);
   }
-  /* history */
+  /***************************************************** home section */
+  .sectionContent {
+    width: 90%;
+  }
+  .sectionImg img {
+    width: 90%;
+    margin-top: 100px;
+  }
+  .sectionText {
+    text-justify: auto;
+  }
+  .sectionText h2 {
+    font-size: 2rem;
+    margin: 40px 0;
+    text-align: center;
+  }
+  .sectionText p {
+    font-size: 1.2rem;
+    margin: 40px 0 100px;
+  }
+  /***************************************************** home history */
   .sectionContent {
     width: 100%;
     flex-direction: column;
@@ -460,10 +512,32 @@ section {
   }
   .sectionText {
     width: 80%;
-    text-align: center;
   }
   .sectionText .nintendoBtn {
     margin: auto;
+  }
+  /***************************************************** hours and price */
+  .informationsTitle {
+    margin: 50px 0;
+    text-align: center;
+  }
+  .informationsHours {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
+    grid-template-areas: 
+    "leftH"
+    "rightH"
+  ;
+  row-gap: 30px;
+  }
+  .informationsPrices {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
+    grid-template-areas: 
+    "leftP"
+    "rightP"
+  ;
+  margin-bottom: 50px;
   }
 }
 
