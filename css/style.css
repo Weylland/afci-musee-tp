@@ -23,7 +23,56 @@
   src: url("../assets/font/roboto/Roboto-Bold.ttf");
 }
 /* Navbar */
+
+nav {
+  width: 60px;
+  height: 100vh;
+  background-color: var(--color2);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
 nav div {
+  position: relative;
+}
+#navIconDiv {
+  width: 100%;
+  height: 100vh;
+  z-index: 1001;
+}
+#navTextDiv {
+  background-color: var(--color2);
+  box-shadow: rgba(0, 0, 0, 0.342) 5px 5px 30px;
+  width: 300px;
+  height: 100vh;
+  z-index: 999;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translateX(-240px);
+}
+nav ul {
+  margin-top: 100px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  height: 40vh;
+  min-height: 400px;
+  list-style: none;
+}
+nav a {
+  color: var(--color3);
+  text-decoration: none;
+}
+.navIcon {
+  font-size: 2em;
+  color: var(--color3);
+}
+
+/* nav div {
   padding-top: 150px;
   width: 88px;
   height: 100vh;
@@ -92,9 +141,9 @@ nav a {
 }
 .navActive {
   color: var(--color7);
-}
+} */
 /* Nav animation */
-nav div:hover {
+/* nav div:hover {
   width: 300px;
   cursor: pointer;
 }
@@ -133,7 +182,7 @@ nav input:checked ~ .crossImg {
 nav input:hover ~ .burgerImg,
 nav input:hover ~ .crossImg {
   transform: scale(0.9);
-}
+} */
 /*******************************************************/
 /******************** HOME PAGE ************************/
 /*******************************************************/
@@ -322,11 +371,10 @@ section {
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: auto 2fr 2fr;
-  grid-template-areas: 
+  grid-template-areas:
     "informationsTitle"
     "informationsHours"
-    "informationsPrices"
-  ;
+    "informationsPrices";
 }
 .informationsTitle {
   grid-area: informationsTitle;
@@ -337,9 +385,7 @@ section {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: auto;
-  grid-template-areas: 
-  "leftH rightH"
-;
+  grid-template-areas: "leftH rightH";
 }
 .informationsPrices {
   padding: 10px;
@@ -347,9 +393,7 @@ section {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: auto;
-  grid-template-areas: 
-  "leftP rightP"
-;
+  grid-template-areas: "leftP rightP";
 }
 .informationsPricesRight div {
   display: flex;
@@ -524,20 +568,18 @@ section {
   .informationsHours {
     grid-template-columns: 1fr;
     grid-template-rows: auto auto;
-    grid-template-areas: 
-    "leftH"
-    "rightH"
-  ;
-  row-gap: 30px;
+    grid-template-areas:
+      "leftH"
+      "rightH";
+    row-gap: 30px;
   }
   .informationsPrices {
     grid-template-columns: 1fr;
     grid-template-rows: auto auto;
-    grid-template-areas: 
-    "leftP"
-    "rightP"
-  ;
-  margin-bottom: 50px;
+    grid-template-areas:
+      "leftP"
+      "rightP";
+    margin-bottom: 50px;
   }
 }
 
